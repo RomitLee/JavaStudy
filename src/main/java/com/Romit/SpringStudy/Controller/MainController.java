@@ -2,8 +2,11 @@ package com.Romit.SpringStudy.Controller;
 
 import cn.hutool.core.util.XmlUtil;
 import cn.hutool.json.JSONObject;
+import com.Romit.SpringStudy.Service.SysUserService;
+import com.Romit.SpringStudy.Service.SysUserServiceImpl;
 import com.Romit.SpringStudy.entity.Person;
 import com.Romit.SpringStudy.Service.PersonService;
+import com.Romit.SpringStudy.entity.SysUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +23,9 @@ public class MainController {
     private PersonService personService;
     private DataSource dataSource;
 
+    @Autowired
+    private SysUserService sysUserService;
+
     @RequestMapping("/")
     @ResponseBody
     public Map<String,String> main(){
@@ -30,11 +36,25 @@ public class MainController {
     }
 
 
-    @RequestMapping("/getP")
+    @RequestMapping("/getSysUser")
     @ResponseBody
-    public Person getPerson(Integer id){
+    public SysUser getPerson(Long id){
 
-        return personService.getPerson(id);
+        return sysUserService.selectByPrimaryKey(id);
+    }
+
+    @RequestMapping("/insertSysUser")
+    @ResponseBody
+    public int insertSysUser(SysUser user){
+
+        return sysUserService.insert(user);
+    }
+
+    @RequestMapping("/deleteSysUser")
+    @ResponseBody
+    public int deleteSysUser(Long id){
+
+        return sysUserService.deleteByPrimaryKey(id);
     }
 
     @RequestMapping("/xx")

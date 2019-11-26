@@ -1,6 +1,7 @@
 package com.Romit.SpringStudy.Service;
 import java.util.List;
 
+import cn.hutool.core.date.DateUtil;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.Romit.SpringStudy.entity.SysUser;
@@ -23,6 +24,9 @@ public class SysUserServiceImpl implements SysUserService{
 
     @Override
     public int insert(SysUser record) {
+        record.setCreateTime(DateUtil.date());
+
+        System.out.println(DateUtil.date());
         return sysUserMapper.insert(record);
     }
 

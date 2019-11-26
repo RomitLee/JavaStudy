@@ -6,6 +6,7 @@ import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.Romit.SpringStudy.Service.PudcServiceImpl;
 import com.Romit.SpringStudy.entity.Pudc;
+import com.Romit.SpringStudy.entity.SysUser;
 import com.Romit.SpringStudy.entity.User;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,9 @@ public class AOPTest extends AbstractJUnit4SpringContextTests {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    private SysUser sysUser;
 
     @Autowired
     private PudcServiceImpl pudcService=null;
@@ -89,7 +93,6 @@ public class AOPTest extends AbstractJUnit4SpringContextTests {
     public void mybatisTest(){
        String pudcClassName= ClassUtil.getPackage(Pudc.class);
        System.out.println("~~~~~~~~~~~~~~~~"+pudcClassName);
-
 
 
     }
