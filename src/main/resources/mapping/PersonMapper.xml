@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.Romit.SpringStudy.mapper.PersonMapper">
+    <resultMap id="BaseResultMap" type="com.Romit.SpringStudy.entity.Person">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+    </resultMap>
+    <select id="getPerson" resultType="com.Romit.SpringStudy.entity.Person">
+        select * from `table_name1` where id = #{id}
+    </select>
+
+
+</mapper>
