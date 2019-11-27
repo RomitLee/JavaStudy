@@ -18,6 +18,8 @@ public class Person implements Cloneable<Person>{
                 ", name='" + name + '\'' +
                 ", pubd=" + pubd +
                 '}';
+
+
     }
 
     public Pudc getPubd() {
@@ -48,6 +50,7 @@ public class Person implements Cloneable<Person>{
         int s=12;
         String s1 = Convert.toStr(s);
         Pudc pudc=new Pudc();
+        //fffff
 
 
     }
