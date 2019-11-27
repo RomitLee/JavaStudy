@@ -1,11 +1,15 @@
 package com.Romit.SpringStudy.Controller;
 
+import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.XmlUtil;
 import cn.hutool.json.JSONObject;
+import com.Romit.SpringStudy.Common.R;
+import com.Romit.SpringStudy.Service.SysRoleService;
 import com.Romit.SpringStudy.Service.SysUserService;
 import com.Romit.SpringStudy.Service.SysUserServiceImpl;
 import com.Romit.SpringStudy.entity.Person;
 import com.Romit.SpringStudy.Service.PersonService;
+import com.Romit.SpringStudy.entity.SysRole;
 import com.Romit.SpringStudy.entity.SysUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,7 +25,8 @@ import java.util.Map;
 public class MainController {
     @Autowired
     private PersonService personService;
-    private DataSource dataSource;
+   @Autowired
+    private SysRoleService sysRoleService;
 
     @Autowired
     private SysUserService sysUserService;
@@ -45,9 +50,25 @@ public class MainController {
 
     @RequestMapping("/insertSysUser")
     @ResponseBody
-    public int insertSysUser(SysUser user){
+    public R insertSysUser(SysUser user){
 
-        return sysUserService.insert(user);
+        sysUserService.insert(user);
+        return R.ok();
+    }
+
+    @RequestMapping("/insertSysRole")
+    @ResponseBody
+    public R insertSysUser(SysRole user){
+        user.setCreateTime(DateUtil.date());
+        if(sysRoleService.save(user)){
+            return R.ok();
+
+        }
+        else{
+            return R.error("插入失败");
+
+        }
+
     }
 
     @RequestMapping("/deleteSysUser")

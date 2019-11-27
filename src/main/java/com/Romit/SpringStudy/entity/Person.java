@@ -46,7 +46,7 @@ public class Person implements Cloneable<Person>{
 
     public Person(){
         int s=12;
-        Convert.toStr(s);
+        String s1 = Convert.toStr(s);
         Pudc pudc=new Pudc();
 
 

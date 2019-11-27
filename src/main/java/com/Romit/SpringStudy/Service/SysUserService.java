@@ -1,11 +1,13 @@
 package com.Romit.SpringStudy.Service;
 
 import com.Romit.SpringStudy.entity.SysUser;
-    /**
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+
+/**
  * @author 李锐(Romit.Lee)
  * @date 2019/11/25 2:44
  */
-public interface SysUserService{
+public interface SysUserService  {
 
 
     int deleteByPrimaryKey(Long id);
