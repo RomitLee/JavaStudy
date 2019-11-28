@@ -1,14 +1,10 @@
 package com.Romit.SpringStudy.Controller;
 
 import cn.hutool.core.date.DateUtil;
-import cn.hutool.core.util.XmlUtil;
 import cn.hutool.json.JSONObject;
 import com.Romit.SpringStudy.Common.R;
 import com.Romit.SpringStudy.Service.SysRoleService;
 import com.Romit.SpringStudy.Service.SysUserService;
-import com.Romit.SpringStudy.Service.SysUserServiceImpl;
-import com.Romit.SpringStudy.entity.Person;
-import com.Romit.SpringStudy.Service.PersonService;
 import com.Romit.SpringStudy.entity.SysRole;
 import com.Romit.SpringStudy.entity.SysUser;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,15 +12,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 @Controller
 public class MainController {
-    @Autowired
-    private PersonService personService;
    @Autowired
     private SysRoleService sysRoleService;
 

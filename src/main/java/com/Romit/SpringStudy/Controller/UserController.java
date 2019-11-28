@@ -1,7 +1,6 @@
 package com.Romit.SpringStudy.Controller;
 
-import com.Romit.SpringStudy.entity.User;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.Romit.SpringStudy.entity.SysUser;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -14,24 +13,16 @@ public class UserController {
 //    @Autowired
 //    DataSource dataSource;
 
-    @RequestMapping("/print")
-    @ResponseBody
-    public User printUser(String userName, String userAge){
-        User user=new User(userName,userAge);
 
-
-
-        return user;
-
-    }
 
     @RequestMapping("/")
     @ResponseBody
-    public User SetUser(){
+    public SysUser SetUser(){
         System.out.println("进入setUser");
 
 
-        User user=new User("lirui","30");
+        SysUser user=new SysUser();
+        user.setUserName("lirui");
 
 
 //        userService.printUser(user);

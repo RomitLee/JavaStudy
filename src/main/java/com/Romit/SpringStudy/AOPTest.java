@@ -1,13 +1,7 @@
 package com.Romit.SpringStudy;
 
 import cn.hutool.core.util.ClassUtil;
-import cn.hutool.core.util.XmlUtil;
-import cn.hutool.json.JSONObject;
-import cn.hutool.json.JSONUtil;
-import com.Romit.SpringStudy.Service.PudcServiceImpl;
-import com.Romit.SpringStudy.entity.Pudc;
 import com.Romit.SpringStudy.entity.SysUser;
-import com.Romit.SpringStudy.entity.User;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,7 +9,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
 
 import javax.sql.DataSource;
-import java.util.List;
 
 
 @SpringBootTest
@@ -23,8 +16,7 @@ public class AOPTest extends AbstractJUnit4SpringContextTests {
 
 //    @Autowired
 //    protected ApplicationContext ctx;
-    @Autowired
-    public User user;
+
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -32,8 +24,7 @@ public class AOPTest extends AbstractJUnit4SpringContextTests {
     @Autowired
     private SysUser sysUser;
 
-    @Autowired
-    private PudcServiceImpl pudcService=null;
+
 
     /**
      * 详情描述:
@@ -91,7 +82,7 @@ public class AOPTest extends AbstractJUnit4SpringContextTests {
      */
     @Test
     public void mybatisTest(){
-       String pudcClassName= ClassUtil.getPackage(Pudc.class);
+       String pudcClassName= ClassUtil.getPackage(SysUser.class);
        System.out.println("~~~~~~~~~~~~~~~~"+pudcClassName);
 
 
