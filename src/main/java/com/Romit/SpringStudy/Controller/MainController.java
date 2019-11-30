@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -28,7 +29,8 @@ public class MainController {
     @ResponseBody
     public Map<String,String> main(){
         Map<String,String> map=new HashMap<String,String>();
-        map.put("key","value");
+        map.put("key1","value1");
+        map.put("key2","value2");
         return map;
 
     }
@@ -38,14 +40,14 @@ public class MainController {
     @ResponseBody
     public SysUser getPerson(Long id){
 
-        return sysUserService.selectByPrimaryKey(id);
+        return sysUserService.getById(id);
     }
 
     @RequestMapping("/insertSysUser")
     @ResponseBody
     public R insertSysUser(SysUser user){
 
-        sysUserService.insert(user);
+        sysUserService.save(user);
         return R.ok();
     }
 
@@ -66,9 +68,9 @@ public class MainController {
 
     @RequestMapping("/deleteSysUser")
     @ResponseBody
-    public int deleteSysUser(Long id){
+    public boolean deleteSysUser(Serializable id){
 
-        return sysUserService.deleteByPrimaryKey(id);
+        return sysUserService.removeById(id);
     }
 
     @RequestMapping("/xx")

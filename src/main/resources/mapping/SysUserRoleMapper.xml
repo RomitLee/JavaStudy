@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.Romit.SpringStudy.mapper.SysUserRoleMapper">
+  <resultMap id="BaseResultMap" type="com.Romit.SpringStudy.entity.SysUserRole">
+    <!--@mbg.generated-->
+    <!--@Table sql_test.sys_user_role-->
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="role_id" jdbcType="BIGINT" property="roleId" />
+  </resultMap>
+</mapper>

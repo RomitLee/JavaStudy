@@ -4,7 +4,7 @@ import com.Romit.SpringStudy.entity.SysRole;
 import com.baomidou.mybatisplus.extension.service.IService;
     /**
  * @author 李锐(Romit.Lee)
- * @date 2019/11/26 23:18
+ * @date 2019/12/1 0:34
  */
 public interface SysRoleService extends IService<SysRole>{
 

@@ -9,9 +9,9 @@ import java.util.Date;
 
 /**
  * @author 李锐(Romit.Lee)
- * @date 2019/11/26 23:18
+ * @date 2019/12/1 0:34
  */
-@TableName(value = "sys_role")
+@TableName(value = "sql_test.sys_role")
 public class SysRole implements Serializable {
     /**
      * 角色ID

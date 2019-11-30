@@ -1,6 +1,6 @@
 package com.Romit.SpringStudy.mapper;
 
-import com.Romit.SpringStudy.entity.SysPrivilege;
+import com.Romit.SpringStudy.entity.SysUserRole;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -9,5 +9,5 @@ import org.apache.ibatis.annotations.Mapper;
  * @date 2019/12/1 0:34
  */
 @Mapper
-public interface SysPrivilegeMapper extends BaseMapper<SysPrivilege> {
+public interface SysUserRoleMapper extends BaseMapper<SysUserRole> {
 }
