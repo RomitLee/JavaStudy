@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 /**
  * @author 李锐(Romit.Lee)
- * @date 2019/12/1 0:34
+ * @date 2019/12/5 16:49
  */
 @Mapper
 public interface SysUserRoleMapper extends BaseMapper<SysUserRole> {

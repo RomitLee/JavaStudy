@@ -4,7 +4,12 @@
   <resultMap id="BaseResultMap" type="com.Romit.SpringStudy.entity.SysUserRole">
     <!--@mbg.generated-->
     <!--@Table sql_test.sys_user_role-->
-    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <id column="user_role_id" jdbcType="BIGINT" property="userRoleId" />
     <result column="role_id" jdbcType="BIGINT" property="roleId" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
   </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    user_role_id, role_id, user_id
+  </sql>
 </mapper>
