@@ -4,7 +4,12 @@
   <resultMap id="BaseResultMap" type="com.Romit.SpringStudy.entity.SysRolePrivilege">
     <!--@mbg.generated-->
     <!--@Table sql_test.sys_role_privilege-->
-    <result column="role_id" jdbcType="BIGINT" property="roleId" />
+    <id column="role_privilege_id" jdbcType="BIGINT" property="rolePrivilegeId" />
     <result column="privilege" jdbcType="BIGINT" property="privilege" />
+    <result column="role_id" jdbcType="BIGINT" property="roleId" />
   </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    role_privilege_id, privilege, role_id
+  </sql>
 </mapper>

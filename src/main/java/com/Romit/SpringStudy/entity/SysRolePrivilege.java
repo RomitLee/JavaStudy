@@ -8,15 +8,12 @@ import java.io.Serializable;
 
 /**
  * @author 李锐(Romit.Lee)
- * @date 2019/12/1 0:34
+ * @date 2019/12/6 0:44
  */
 @TableName(value = "sql_test.sys_role_privilege")
 public class SysRolePrivilege implements Serializable {
-    /**
-     * 角色ID
-     */
-    @TableField(value = "role_id")
-    private Long roleId;
+    @TableId(value = "role_privilege_id", type = IdType.AUTO)
+    private Long rolePrivilegeId;
 
     /**
      * 权限ID
@@ -24,28 +21,32 @@ public class SysRolePrivilege implements Serializable {
     @TableField(value = "privilege")
     private Long privilege;
 
+    /**
+     * 角色ID
+     */
+    @TableField(value = "role_id")
+    private Long roleId;
+
     private static final long serialVersionUID = 1L;
 
-    public static final String COL_ROLE_ID = "role_id";
+    public static final String COL_ROLE_PRIVILEGE_ID = "role_privilege_id";
 
     public static final String COL_PRIVILEGE = "privilege";
 
+    public static final String COL_ROLE_ID = "role_id";
+
     /**
-     * 获取角色ID
-     *
-     * @return role_id - 角色ID
+     * @return role_privilege_id
      */
-    public Long getRoleId() {
-        return roleId;
+    public Long getRolePrivilegeId() {
+        return rolePrivilegeId;
     }
 
     /**
-     * 设置角色ID
-     *
-     * @param roleId 角色ID
+     * @param rolePrivilegeId
      */
-    public void setRoleId(Long roleId) {
-        this.roleId = roleId;
+    public void setRolePrivilegeId(Long rolePrivilegeId) {
+        this.rolePrivilegeId = rolePrivilegeId;
     }
 
     /**
@@ -66,14 +67,33 @@ public class SysRolePrivilege implements Serializable {
         this.privilege = privilege;
     }
 
+    /**
+     * 获取角色ID
+     *
+     * @return role_id - 角色ID
+     */
+    public Long getRoleId() {
+        return roleId;
+    }
+
+    /**
+     * 设置角色ID
+     *
+     * @param roleId 角色ID
+     */
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", roleId=").append(roleId);
+        sb.append(", rolePrivilegeId=").append(rolePrivilegeId);
         sb.append(", privilege=").append(privilege);
+        sb.append(", roleId=").append(roleId);
         sb.append("]");
         return sb.toString();
     }
