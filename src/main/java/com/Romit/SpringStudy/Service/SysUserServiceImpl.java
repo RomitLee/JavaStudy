@@ -1,5 +1,7 @@
 package com.Romit.SpringStudy.Service;
 
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
@@ -13,5 +15,17 @@ import com.Romit.SpringStudy.Service.SysUserService;
  */
 @Service
 public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> implements SysUserService{
+    @Override
+    @CachePut(value = "redisCahce",key = "'redis_user_'+#result.id")
+    public SysUser saveUser(SysUser entity) {
+        //不做sql存储操作，单纯返回一个sysUser提供给@chacheable 用作redis缓存
+        return entity;
 
+    }
+
+    @Override
+    @Cacheable(value = "redisCahce",key = "'redis_user_'+#id")
+    public SysUser getUser(long id) {
+        return this.getById(id);
+    }
 }

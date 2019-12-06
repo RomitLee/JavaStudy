@@ -1,12 +1,9 @@
 package com.Romit.SpringStudy.Service;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
-import java.util.List;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.Romit.SpringStudy.mapper.SysUserRoleMapper;
 import com.Romit.SpringStudy.entity.SysUserRole;
-import com.Romit.SpringStudy.Service.SysUserRoleService;
+import com.Romit.SpringStudy.mapper.SysUserRoleMapper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.stereotype.Service;
 
 /**
  * @author 李锐(Romit.Lee)
