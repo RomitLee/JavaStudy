@@ -16,6 +16,9 @@ import java.util.List;
 @SpringBootTest
 class SpringStudyApplicationTests {
 	@Autowired
+	private  SysUser sysUser;
+
+	@Autowired
 	private SysUserService sysUserService;
 
 	@Autowired

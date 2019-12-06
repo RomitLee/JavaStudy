@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import org.springframework.stereotype.Component;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -11,6 +13,7 @@ import java.util.Date;
  * @author 李锐(Romit.Lee)
  * @date 2019/12/1 0:34
  */
+@Component
 @TableName(value = "sql_test.sys_user")
 public class SysUser implements Serializable {
     /**
@@ -213,4 +216,9 @@ public class SysUser implements Serializable {
         sb.append("]");
         return sb.toString();
     }
+
+//    @Override
+//    public int hashCode() {
+//        return super.hashCode();
+//    }
 }
