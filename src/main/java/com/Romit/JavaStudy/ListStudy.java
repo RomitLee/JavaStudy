@@ -1,4 +1,4 @@
-package com.Romit.SpringStudy;
+package com.Romit.JavaStudy;
 
 import cn.hutool.core.collection.CollUtil;
 import com.Romit.SpringStudy.entity.SysUser;
@@ -8,6 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.text.Format;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -17,7 +18,7 @@ import java.util.List;
 
 
 @SpringBootTest
-public class CollectionTest {
+public class ListStudy {
 
 
     @Autowired
@@ -67,5 +68,22 @@ public class CollectionTest {
 
 
         CollUtil.join(sysUserList,"#");
+    }
+
+    @Test
+    public  void LinkedListTest(){
+        LinkedList<String> stringList=new LinkedList<>();
+        stringList.add("1");
+        stringList.addLast("2");
+        stringList.addFirst("3");
+        stringList.addLast("4");
+        stringList.addFirst("5");
+        for (String s :
+                stringList) {
+            System.out.println(s);
+
+        }
+
+
     }
 }

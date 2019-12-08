@@ -1,12 +1,14 @@
-package com.Romit.SpringStudy;
+package com.Romit;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.cache.annotation.EnableCaching;
 
 
 @SpringBootApplication
+//@ConfigurationPropertiesScan("")
 //basePackages = {"com.Romit.SpringStudy.mapper"}
 @MapperScan("com.Romit.SpringStudy.mapper")
 

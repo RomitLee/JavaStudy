@@ -1,5 +1,6 @@
-package com.Romit.SpringStudy;
+package com.Romit.JavaStudy;
 
+import com.Romit.JavaStudy.MutilIterator;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -79,10 +80,15 @@ public class IterableStudy  {
                 System.out.print(String + " ");
         }
 
+        System.out.println("");
+
         LinkedList<String> linkedList=new LinkedList<>();
-        linkedList.listIterator();
-        linkedList.descendingIterator();
-        linkedList.iterator();
+        Iterator<String> iterator1= linkedList.listIterator();
+        System.out.println(iterator1);
+        Iterator<String> iterator2=linkedList.descendingIterator();
+        System.out.println(iterator2);
+        Iterator<String> iterator3=linkedList.iterator();
+        System.out.println(iterator3);
 
     }
 
