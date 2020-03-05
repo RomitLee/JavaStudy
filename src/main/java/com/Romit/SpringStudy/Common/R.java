@@ -4,6 +4,7 @@ package com.Romit.SpringStudy.Common;
 import cn.hutool.http.HttpStatus;
 
 import java.util.HashMap;
+import java.util.UUID;
 
 /**
  * @author 李锐(Romit.Lee)
@@ -51,8 +52,10 @@ public class R extends HashMap<String, Object> {
         return new R();
     }
 
+    @Override
     public R put(String key, Object value) {
         super.put(key, value);
+//        UUID.randomUUID()
         return this;
     }
 }

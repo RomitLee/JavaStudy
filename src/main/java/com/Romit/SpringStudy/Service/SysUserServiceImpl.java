@@ -4,6 +4,7 @@ import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.Romit.SpringStudy.entity.SysUser;
@@ -19,6 +20,8 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     @CachePut(value = "redisCahce",key = "'redis_user_'+#result.id")
     public SysUser saveUser(SysUser entity) {
         //不做sql存储操作，单纯返回一个sysUser提供给@chacheable 用作redis缓存
+
+        //entity.setCreateTime(Date date);
         return entity;
 
     }

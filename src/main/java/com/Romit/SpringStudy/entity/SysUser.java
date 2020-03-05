@@ -14,7 +14,7 @@ import java.util.Date;
  * @date 2019/12/1 0:34
  */
 @Component
-@TableName(value = "sql_test.sys_user")
+@TableName(value = "test.sys_user")
 public class SysUser implements Serializable {
     /**
      * 用户ID

@@ -13,7 +13,7 @@ import org.springframework.data.redis.core.SessionCallback;
 
 import java.util.List;
 
-@SpringBootTest
+
 class SpringStudyApplicationTests {
 	@Autowired
 	private  SysUser sysUser;

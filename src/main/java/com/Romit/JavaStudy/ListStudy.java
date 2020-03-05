@@ -2,9 +2,11 @@ package com.Romit.JavaStudy;
 
 import cn.hutool.core.collection.CollUtil;
 import com.Romit.SpringStudy.entity.SysUser;
-import org.junit.jupiter.api.Test;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.testng.annotations.Test;
 
 import java.text.Format;
 import java.util.ArrayList;
@@ -17,7 +19,7 @@ import java.util.List;
  */
 
 
-@SpringBootTest
+
 public class ListStudy {
 
 
@@ -45,7 +47,7 @@ public class ListStudy {
 
         System.out.println("实例化的SysUser1的哈希值"+sysUser1.hashCode());
         System.out.println("实例化的SysUser2的哈希值"+sysUser2.hashCode());
-        System.out.println("bean的SysUser的哈希值"+this.sysUser.hashCode());
+        //System.out.println("bean的SysUser的哈希值"+sysUser.hashCode());
 
     }
 

@@ -2,11 +2,12 @@ package com.Romit.SpringStudy;
 
 import cn.hutool.core.util.ClassUtil;
 import com.Romit.SpringStudy.entity.SysUser;
-import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
+
 import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
+import org.testng.annotations.Test;
 
 import javax.sql.DataSource;
 

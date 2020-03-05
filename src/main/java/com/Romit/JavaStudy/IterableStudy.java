@@ -1,8 +1,9 @@
 package com.Romit.JavaStudy;
 
 import com.Romit.JavaStudy.MutilIterator;
-import org.junit.jupiter.api.Test;
+import com.Romit.SpringStudy.Controller.MainController;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -17,7 +18,7 @@ import java.util.List;
  * \* 描述:Iterable接口和的学习
  * \
  */
-@SpringBootTest
+@SpringBootTest(classes = MainController.class)
 public class IterableStudy  {
 
     /*
@@ -30,6 +31,7 @@ public class IterableStudy  {
 
     @Test
     public void iteratorTest(){
+
         List<Integer> list=new ArrayList<Integer>();
         list.add(1);
         list.add(12);
@@ -91,6 +93,22 @@ public class IterableStudy  {
         System.out.println(iterator3);
 
     }
+
+    /**
+
+     *@描述
+
+     *@参数
+
+     *@返回值
+
+     *@创建人 李锐(Romit.Lee)
+
+     *@创建时间 2020/2/20
+
+     *@修改人和其它信息
+
+     */
 
 
 }

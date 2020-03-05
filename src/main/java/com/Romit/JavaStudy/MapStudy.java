@@ -1,7 +1,12 @@
 package com.Romit.JavaStudy;
 
-import org.junit.jupiter.api.Test;
+import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.lang.Dict;
+import com.Romit.SpringStudy.entity.SysUser;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.testng.annotations.Test;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -17,8 +22,11 @@ import java.util.Set;
  * \
  */
 
-@SpringBootTest
+
 public class MapStudy {
+
+    @Autowired
+    private SysUser sysUser;
 
     @Test
     public void hashmapTest(){
@@ -48,6 +56,24 @@ public class MapStudy {
             System.out.println(s+":"+stringMap.get(s));
 
         }
+
+
+    }
+
+    @Test
+    public void beanTest(){
+        Map<String, Object> jiba= BeanUtil.beanToMap(sysUser);
+
+        for (HashMap.Entry entry :
+                jiba.entrySet()) {
+            System.out.println(entry.getKey()+":"+entry.getValue());
+        }
+
+    }
+
+    @Test
+    public void  dictTest(){
+        Dict dict=new Dict();
 
 
     }

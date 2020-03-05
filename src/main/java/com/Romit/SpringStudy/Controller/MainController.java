@@ -12,6 +12,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,12 +27,13 @@ public class MainController {
     @Autowired
     private SysUserService sysUserService;
 
-    @RequestMapping("/")
+    @RequestMapping("/test")
     @ResponseBody
-    public Map<String,String> main(){
+    public Map<String,String> main(HttpServletRequest request, HttpServletResponse response){
         Map<String,String> map=new HashMap<String,String>();
         map.put("key1","value1");
         map.put("key2","value2");
+
         return map;
 
     }
@@ -46,9 +49,17 @@ public class MainController {
     @RequestMapping("/insertSysUser")
     @ResponseBody
     public R insertSysUser(SysUser user){
+        user.setCreateTime(DateUtil.date());
+        if(sysUserService.save(user))
+        {
+            return R.ok();
 
-        sysUserService.save(user);
-        return R.ok();
+        }
+        else {
+
+            return R.error(505,"插入用户信息失败");
+        }
+
     }
 
     @RequestMapping("/insertSysRole")
@@ -85,6 +96,10 @@ public class MainController {
         stringArrayList.add("444");
         jsonObject.put("2",stringArrayList);
         jsonObject.put("1","a");
+        jsonObject.append("3","huhu");
+
+
+
 
         //dataSource.getConnection();
 
