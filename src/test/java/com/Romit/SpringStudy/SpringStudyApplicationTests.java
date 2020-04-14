@@ -1,7 +1,9 @@
 package com.Romit.SpringStudy;
 
 import com.Romit.SpringStudy.Service.SysUserService;
+import com.Romit.SpringStudy.entity.MongoUser;
 import com.Romit.SpringStudy.entity.SysUser;
+import com.Romit.SpringStudy.mapper.MongoUserMapper;
 import com.Romit.SpringStudy.redis.RedisUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +15,7 @@ import org.springframework.data.redis.core.SessionCallback;
 
 import java.util.List;
 
-
+@SpringBootTest
 class SpringStudyApplicationTests {
 	@Autowired
 	private  SysUser sysUser;
@@ -26,6 +28,9 @@ class SpringStudyApplicationTests {
 
 	@Autowired
 	private RedisTemplate<String, Object> redisTemplate;
+
+	@Autowired
+	private  MongoUserMapper mongoUserMapper;
 	@Test
 	void redisTest() {
 
@@ -39,6 +44,26 @@ class SpringStudyApplicationTests {
 		String CaptchaCode=String.valueOf(redisUtil.get("CaptchaCode"));
 		//JSONObject jsonObject=JSONUtil.parseObj(CaptchaCode);
 		System.out.println("验证码是："+CaptchaCode);
+
+
+	}
+
+	@Test
+	void mongoDBTest() {
+
+		MongoUser mongoUser =new MongoUser();
+		mongoUser.setId(2343333L);
+		mongoUser.setUserName("lirur3333ururu");
+		mongoUser.setPassWord("fasgag");
+
+		mongoUserMapper.saveUser(mongoUser);
+		System.out.println(mongoUser.toString());
+
+		//boolean isSet=redisUtil.set("CaptchaCode","ngwm2");
+		//System.out.println(isSet);
+
+
+
 
 
 	}

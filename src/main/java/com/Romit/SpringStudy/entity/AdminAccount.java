@@ -10,11 +10,15 @@ import java.util.Date;
 
  /** 此文件由 IntelliJ IDEA. 2019.3版本创建
  \* 创建人: 李锐(Romit.Lee)
- \* 创建日期: 2020/3/5 
- \* 创建时间: 15:18
+ \* 创建日期: 2020/4/13 
+ \* 创建时间: 14:31
  \* 描述: 
  \*/
-@TableName(value = "mhxy_web.admin_account")
+
+/**
+ * 系统账户
+ */
+@TableName(value = "sql_test.admin_account")
 public class AdminAccount implements Serializable {
     @TableId(value = "id", type = IdType.INPUT)
     private String id;
@@ -43,6 +47,9 @@ public class AdminAccount implements Serializable {
     @TableField(value = "updatatime")
     private Date updatatime;
 
+    @TableField(value = "nickname")
+    private String nickname;
+
     private static final long serialVersionUID = 1L;
 
     public static final String COL_ID = "id";
@@ -54,6 +61,8 @@ public class AdminAccount implements Serializable {
     public static final String COL_CREATTIME = "creattime";
 
     public static final String COL_UPDATATIME = "updatatime";
+
+    public static final String COL_NICKNAME = "nickname";
 
     /**
      * @return id
@@ -141,6 +150,20 @@ public class AdminAccount implements Serializable {
         this.updatatime = updatatime;
     }
 
+    /**
+     * @return nickname
+     */
+    public String getNickname() {
+        return nickname;
+    }
+
+    /**
+     * @param nickname
+     */
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -152,6 +175,7 @@ public class AdminAccount implements Serializable {
         sb.append(", password=").append(password);
         sb.append(", creattime=").append(creattime);
         sb.append(", updatatime=").append(updatatime);
+        sb.append(", nickname=").append(nickname);
         sb.append("]");
         return sb.toString();
     }

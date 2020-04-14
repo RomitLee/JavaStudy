@@ -3,15 +3,16 @@
 <mapper namespace="com.Romit.SpringStudy.mapper.AdminAccountMapper">
   <resultMap id="BaseResultMap" type="com.Romit.SpringStudy.entity.AdminAccount">
     <!--@mbg.generated-->
-    <!--@Table mhxy_web.admin_account-->
+    <!--@Table sql_test.admin_account-->
     <id column="id" jdbcType="VARCHAR" property="id" />
     <result column="account" jdbcType="VARCHAR" property="account" />
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="creattime" jdbcType="TIMESTAMP" property="creattime" />
     <result column="updatatime" jdbcType="TIMESTAMP" property="updatatime" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, account, `password`, creattime, updatatime
+    id, account, `password`, creattime, updatatime, nickname
   </sql>
 </mapper>
